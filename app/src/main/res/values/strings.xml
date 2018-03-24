@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">MyDuolingo</string>
+    <string name="choose_lang_title">Quiero aprender...</string>
+    <string name="courses_in_english">I want to learn...</string>
+
+    <string name="btn_get_started">Get Started</string>
+    <string name="btn_go_to_login">I already have an account</string>
+
+    <string name="intro_section_a">Free language education for the world.</string>
+    <string name="intro_section_b">Earn achievements to track your progress in the language.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="drawer_1_fragment">Drawer 1</string>
+    <string name="drawer_2_fragment">Drawer 2</string>
+    <string name="drawer_3_fragment">Drawer 3</string>
+
+    <string name="drawer_1">Inglés</string>
+    <string name="drawer_2">Francés</string>
+    <string name="drawer_3">Italiano</string>
+
+    <string name="activity_login_title">Ingresar</string>
+    <string name="txt_hint_user_login">Usuario o correo</string>
+    <string name="txt_hint_user_password">Contraseña</string>
+
+    <string name="btn_text_enter">Ingresar</string>
+    <string name="btn_text_forgot_password">Restablecer Contraseña</string>
+
+    <string name="txtv_one_tap_sign_in">Acceso rápido</string>
+
+    <string name="btn_text_google">Google</string>
+    <string name="btn_text_facebook">Facebook</string>
+
+    <string name="txt_wrong_username_or_password">Usuario o contraseña incorrecta</string>
+    <string name="txt_login_successful">Login exitoso!</string>
+
+    <string name="required_field">Campo requerido</string>
+
+    <string name="dashboard_daily_goal_status">Daily Goal Status</string>
+    <string name="dashboard_user_lvl_status">User Level</string>
+
+    <string name="toolbar_more_options">Config</string>
+    <string name="dashboard_more_options">Configuración</string>
+    <string name="share_progress">Comparte tu progreso</string>
+    <string name="suggestions">Sugerencias</string>
+    <string name="close_session">Cerrar sesión</string>
+
+    <string name="learnBarText">Aprender</string>
+    <string name="profileBarText">Perfil</string>
+    <string name="clubBarText">Clubs</string>
+    <string name="storeBarText">Tienda</string>
+    <string name="title_activity_dayli_goal">Elige una meta diaria</string>
+
+    <string name="goal_option_1">Relajado</string>
+    <string name="goal_option_2">Normal</string>
+    <string name="goal_option_3">Serio</string>
+    <string name="goal_option_4">Intenso</string>
+
+    <string name="goal_description_option_1">5 minutos al día</string>
+    <string name="goal_description_option_2">10 minutos al día</string>
+    <string name="goal_description_option_3">15 minutos al día</string>
+    <string name="goal_description_option_4">20 minutos al día</string>
+
+    <string name="message_dayli_goal">Puedes cambiar tu meta mas adelante</string>
+    <string name="btn_text_continue">Continuar</string>
+    <string name="title_activity_request_profile_info">RequestProfileInfoActivity</string>
+
+    <string name="title_request_profile_info">!Es momento de crear tu perfil!</string>
+    <string name="description_request_profile_info">Crea un perfil para guardar tu progreso y continuar aprendiendo completamente gratis.</string>
+    <string name="btn_1_bottom_request_profile_info">Crear perfil</string>
+    <string name="btn_2_bottom_request_profile_info">Mas tarde</string>
+
+    <string name="closeDrawer">Navigation View</string>
+    <string name="openDrawer">Navigation View Closed</string>
+
+</resources>
