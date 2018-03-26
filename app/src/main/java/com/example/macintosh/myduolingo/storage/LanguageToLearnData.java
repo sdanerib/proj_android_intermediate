@@ -13,13 +13,13 @@ import java.util.List;
 
 public class LanguageToLearnData {
 
-    private List<LanguageToLearnEntity> languagesToLearnEntityList;
+    private ArrayList<LanguageToLearnEntity> languagesToLearnEntityList;
 
     public LanguageToLearnData() {
         this.languagesToLearnEntityList = new ArrayList<>();
     }
 
-    public List<LanguageToLearnEntity> generateLanguagesList() {
+    public ArrayList<LanguageToLearnEntity> generateLanguagesList() {
         this.languagesToLearnEntityList.add(new LanguageToLearnEntity(1, "SPA", "Spanish", "images/flag_sp.png", true));
         this.languagesToLearnEntityList.add(new LanguageToLearnEntity(3, "FRA", "French", "images/flag_fr.png", true));
         this.languagesToLearnEntityList.add(new LanguageToLearnEntity(5, "GER", "German", "images/flag_ge.png", true));

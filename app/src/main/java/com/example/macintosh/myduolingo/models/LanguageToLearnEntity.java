@@ -6,6 +6,21 @@ import java.io.Serializable;
  * Created by macintosh on 2/5/18.
  */
 
+/*
+{
+    "langAbbr": "SPA",
+    "created": 1521949801098,
+    "available": true,
+    "langName": "Spanish",
+    "langFlagResource": "images/flag_sp.png",
+    "id": 1,
+    "ownerId": null,
+    "updated": 1521949904223,
+    "objectId": "23AFC15B-4D08-F72E-FFF4-96D85C01C800",
+    "___class": "LanguagesToLearn"
+}
+*/
+
 public class LanguageToLearnEntity implements Serializable{
 
     private int id;

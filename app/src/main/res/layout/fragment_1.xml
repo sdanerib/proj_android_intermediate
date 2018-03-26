@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.macintosh.myduolingo.ui.fragments.Fragment1"
-    android:background="@color/creme">
+    android:background="@color/bananaLight">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

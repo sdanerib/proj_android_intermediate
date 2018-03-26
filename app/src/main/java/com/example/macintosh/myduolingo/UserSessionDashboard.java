@@ -3,12 +3,15 @@ package com.example.macintosh.myduolingo;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -17,9 +20,15 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.macintosh.myduolingo.ui.OnFragmentInteractionListener;
+import com.example.macintosh.myduolingo.ui.fragments.ClubsFragment;
+import com.example.macintosh.myduolingo.ui.fragments.ConfigFragment;
 import com.example.macintosh.myduolingo.ui.fragments.Fragment1;
 import com.example.macintosh.myduolingo.ui.fragments.Fragment2;
 import com.example.macintosh.myduolingo.ui.fragments.Fragment3;
+import com.example.macintosh.myduolingo.ui.fragments.LearnFragment;
+import com.example.macintosh.myduolingo.ui.fragments.ProfileFragment;
+import com.example.macintosh.myduolingo.ui.fragments.ShareProgressFragment;
+import com.example.macintosh.myduolingo.ui.fragments.SuggestionsFragment;
 
 public class UserSessionDashboard extends AppCompatActivity implements OnFragmentInteractionListener {
 
@@ -27,6 +36,7 @@ public class UserSessionDashboard extends AppCompatActivity implements OnFragmen
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
+    private BottomNavigationView bottomNavigationView;
     //private LanguageToLearnEntity languageToLearnObj;
 
 
@@ -48,6 +58,7 @@ public class UserSessionDashboard extends AppCompatActivity implements OnFragmen
         setSupportActionBar(toolbar);
 
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         TextView tviLangToBeLearned = findViewById(R.id.tviToolBarTitle);
         //tviLangToBeLearned.setText(languageToLearnObj.getLangName());
@@ -59,14 +70,11 @@ public class UserSessionDashboard extends AppCompatActivity implements OnFragmen
 
             @Override
             public void onDrawerClosed(View drawerView) {
-                // Code here will be triggered once the drawer closes as we dont want anything to happen so we leave this blank
                 super.onDrawerClosed(drawerView);
             }
 
             @Override
             public void onDrawerOpened(View drawerView) {
-                // Code here will be triggered once the drawer open as we dont want anything to happen so we leave this blank
-
                 super.onDrawerOpened(drawerView);
             }
         };
@@ -80,43 +88,58 @@ public class UserSessionDashboard extends AppCompatActivity implements OnFragmen
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 
-            // This method will trigger on item Click of navigation menu
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
-
 
                 //Checking if the item is in checked state or not, if not make it in checked state
                 if(menuItem.isChecked()) menuItem.setChecked(false);
                 else menuItem.setChecked(true);
 
-                //Closing drawer on item click
                 drawerLayout.closeDrawers();
 
-                //Check to see which item was being clicked and perform appropriate action
                 switch (menuItem.getItemId()){
 
-
-                    //Replacing the main content with ContentFragment Which is our Inbox View;
                     case R.id.menu1:
                         changeFragment(0);
                         return true;
 
-                    // For rest of the options we just show a toast on click
-
                     case R.id.menu2:
-                        //Toast.makeText(getApplicationContext(),"Stared Selected",Toast.LENGTH_SHORT).show();
                         changeFragment(1);
                         return true;
+
                     case R.id.menu3:
-                        //Toast.makeText(getApplicationContext(),"Send Selected",Toast.LENGTH_SHORT).show();
                         changeFragment(2);
                         return true;
 
                     default:
                         return true;
-
                 }
+            }
+        });
 
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if(item.isChecked()) item.setChecked(false);
+                else item.setChecked(true);
+
+                switch (item.getItemId()){
+
+                    case R.id.learnBar:
+                        changeFragment(6);
+                        return true;
+
+                    case R.id.profileBar:
+                        changeFragment(7);
+                        return true;
+
+                    case R.id.clubBar:
+                        changeFragment(8);
+                        return true;
+
+                    default:
+                        return true;
+                }
             }
         });
 
@@ -141,6 +164,24 @@ public class UserSessionDashboard extends AppCompatActivity implements OnFragmen
             case 2:
                 fragment = (Fragment) new Fragment3();
                 break;
+            case 3:
+                fragment = (Fragment) new ConfigFragment();
+                break;
+            case 4:
+                fragment = (Fragment) new ShareProgressFragment();
+                break;
+            case 5:
+                fragment = (Fragment) new SuggestionsFragment();
+                break;
+            case 6:
+                fragment = (Fragment) new LearnFragment();
+                break;
+            case 7:
+                fragment = (Fragment) new ProfileFragment();
+                break;
+            case 8:
+                fragment = (Fragment) new ClubsFragment();
+                break;
         }
         if(fragment!=null){
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -154,6 +195,21 @@ public class UserSessionDashboard extends AppCompatActivity implements OnFragmen
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()){
+
+            case R.id.dashboardMoreOptions:
+                Log.d("MENU", "CONFIGURATIONS");
+                changeFragment(3);
+                return true;
+
+            case R.id.shareProgress:
+                Log.d("MENU", "SHARE PROGRESS");
+                changeFragment(4);
+                return true;
+
+            case R.id.suggestions:
+                Log.d("MENU", "SUGGESTIONS");
+                changeFragment(5);
+                return true;
 
             case R.id.closeSession:
                 Log.d("MENU", "CLOSE SESSION");

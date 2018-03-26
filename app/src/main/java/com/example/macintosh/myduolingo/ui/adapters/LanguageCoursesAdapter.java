@@ -16,6 +16,7 @@ import com.example.macintosh.myduolingo.models.LanguageToLearnEntity;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,11 +25,11 @@ import java.util.List;
 
 public class LanguageCoursesAdapter extends RecyclerView.Adapter<LanguageCoursesAdapter.ViewHolder>{
 
-    private List<LanguageToLearnEntity> languagesData;
+    private ArrayList<LanguageToLearnEntity> languagesData;
     private final Context context;
     private final DuolingoBehaviourInterface myDuolingoBehaviourInterface;
 
-    public LanguageCoursesAdapter(List<LanguageToLearnEntity> languagesData, Context context, DuolingoBehaviourInterface myDuolingoInterface) {
+    public LanguageCoursesAdapter(ArrayList<LanguageToLearnEntity> languagesData, Context context, DuolingoBehaviourInterface myDuolingoInterface) {
         this.languagesData = languagesData;
         this.context = context;
         this.myDuolingoBehaviourInterface = myDuolingoInterface;
